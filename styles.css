@@ -37,6 +37,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   max-width: var(--measure);
   margin: 0 auto;
   padding: 3.5rem 1.5rem 6rem;
+  transition: max-width 0.15s ease;
 }
 
 header.site {
@@ -114,20 +115,41 @@ p { margin: 0 0 1.1rem; }
 .intro {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 2rem;
-  align-items: start;
+  gap: 2.75rem;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
 .intro img {
-  width: 132px;
-  height: 176px;
+  width: 168px;
+  height: 224px;
   object-fit: cover;
-  border-radius: 2px;
+  border-radius: 3px;
   filter: grayscale(15%);
+  box-shadow: 0 1px 3px rgba(29, 28, 25, 0.08);
 }
-@media (max-width: 520px) {
-  .intro { grid-template-columns: 1fr; }
-  .intro img { width: 104px; height: 139px; }
+@media (max-width: 560px) {
+  .intro { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 1.75rem; }
+  .intro img { width: 152px; height: 203px; order: -1; }
+}
+
+/* Let the layout breathe on larger screens instead of staying phone-narrow */
+@media (min-width: 640px) {
+  .wrap { padding: 4.5rem 2.5rem 7rem; }
+}
+@media (min-width: 900px) {
+  :root { --measure: 50rem; }
+  body { font-size: 1.08rem; }
+  .wrap { padding: 5.5rem 3rem 8rem; }
+  .lede { font-size: 1.22rem; }
+  .intro { gap: 3.5rem; }
+  .intro img { width: 220px; height: 293px; }
+  header.site .mark { font-size: 1.3rem; }
+  nav.site { font-size: 0.88rem; gap: 1.4rem; }
+}
+@media (min-width: 1280px) {
+  :root { --measure: 56rem; }
+  .wrap { padding: 6.5rem 3rem 9rem; }
+  .intro img { width: 248px; height: 331px; }
 }
 
 .entry {
