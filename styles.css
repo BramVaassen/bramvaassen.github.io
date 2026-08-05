@@ -7,7 +7,7 @@
   --rule: #ddd7c9;
   --accent: #3c5a6b;
   --accent-warm: #8b5a2b;
-  --measure: 40rem;
+  --measure: 42rem;
 }
 
 * { box-sizing: border-box; }
@@ -112,20 +112,24 @@ p { margin: 0 0 1.1rem; }
   color: var(--ink);
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 2.25rem;
+.intro {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.75rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
-.hero img {
-  width: 176px;
-  height: 235px;
+.intro img {
+  width: 168px;
+  height: 224px;
   object-fit: cover;
   border-radius: 3px;
   filter: grayscale(15%);
-  box-shadow: 0 2px 8px rgba(29, 28, 25, 0.1);
+  box-shadow: 0 1px 3px rgba(29, 28, 25, 0.08);
 }
-.bio p:first-child {
-  font-size: 1.12rem;
+@media (max-width: 560px) {
+  .intro { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 1.75rem; }
+  .intro img { width: 152px; height: 203px; order: -1; }
 }
 
 /* Let the layout breathe on larger screens instead of staying phone-narrow */
@@ -133,20 +137,19 @@ p { margin: 0 0 1.1rem; }
   .wrap { padding: 4.5rem 2.5rem 7rem; }
 }
 @media (min-width: 900px) {
-  :root { --measure: 54rem; }
+  :root { --measure: 50rem; }
   body { font-size: 1.08rem; }
   .wrap { padding: 5.5rem 3rem 8rem; }
-  .bio p:first-child { font-size: 1.28rem; }
-  .hero { margin-bottom: 3rem; }
-  .hero img { width: 232px; height: 309px; }
+  .lede { font-size: 1.22rem; }
+  .intro { gap: 3.5rem; }
+  .intro img { width: 220px; height: 293px; }
   header.site .mark { font-size: 1.3rem; }
   nav.site { font-size: 0.88rem; gap: 1.4rem; }
-  h2 { margin: 3.5rem 0 1.25rem; }
 }
 @media (min-width: 1280px) {
-  :root { --measure: 62rem; }
-  .wrap { padding: 7rem 3rem 10rem; }
-  .hero img { width: 260px; height: 347px; }
+  :root { --measure: 56rem; }
+  .wrap { padding: 6.5rem 3rem 9rem; }
+  .intro img { width: 248px; height: 331px; }
 }
 
 .entry {
