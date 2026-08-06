@@ -7,7 +7,7 @@
   --rule: #ddd7c9;
   --accent: #3c5a6b;
   --accent-warm: #8b5a2b;
-  --measure: 42rem;
+  --measure: 40rem;
 }
 
 * { box-sizing: border-box; }
@@ -115,8 +115,8 @@ p { margin: 0 0 1.1rem; }
 .intro {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 2.75rem;
-  align-items: center;
+  gap: 2.5rem;
+  align-items: start;
   margin-bottom: 0.5rem;
 }
 .intro img {
@@ -125,10 +125,13 @@ p { margin: 0 0 1.1rem; }
   object-fit: cover;
   border-radius: 3px;
   filter: grayscale(15%);
-  box-shadow: 0 1px 3px rgba(29, 28, 25, 0.08);
+  box-shadow: 0 2px 8px rgba(29, 28, 25, 0.1);
+}
+.intro p:first-child {
+  font-size: 1.12rem;
 }
 @media (max-width: 560px) {
-  .intro { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 1.75rem; }
+  .intro { grid-template-columns: 1fr; gap: 1.75rem; }
   .intro img { width: 152px; height: 203px; order: -1; }
 }
 
@@ -137,18 +140,19 @@ p { margin: 0 0 1.1rem; }
   .wrap { padding: 4.5rem 2.5rem 7rem; }
 }
 @media (min-width: 900px) {
-  :root { --measure: 50rem; }
+  :root { --measure: 60rem; }
   body { font-size: 1.08rem; }
   .wrap { padding: 5.5rem 3rem 8rem; }
-  .lede { font-size: 1.22rem; }
+  .intro p:first-child { font-size: 1.22rem; }
   .intro { gap: 3.5rem; }
   .intro img { width: 220px; height: 293px; }
   header.site .mark { font-size: 1.3rem; }
   nav.site { font-size: 0.88rem; gap: 1.4rem; }
+  h2 { margin: 3.5rem 0 1.25rem; }
 }
 @media (min-width: 1280px) {
-  :root { --measure: 56rem; }
-  .wrap { padding: 6.5rem 3rem 9rem; }
+  :root { --measure: 68rem; }
+  .wrap { padding: 7rem 3rem 10rem; }
   .intro img { width: 248px; height: 331px; }
 }
 
