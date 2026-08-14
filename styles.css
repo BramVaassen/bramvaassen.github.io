@@ -170,6 +170,35 @@ p { margin: 0 0 1.1rem; }
   display: inline-block;
   min-width: 3ch;
 }
+.entry .synopsis {
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin: 0.35rem 0 0;
+}
+
+.abstract {
+  margin-top: 0.55rem;
+}
+.abstract summary {
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.74rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  list-style: none;
+}
+.abstract summary::-webkit-details-marker { display: none; }
+.abstract summary::before { content: "+ "; }
+.abstract[open] summary::before { content: "– "; }
+.abstract summary:hover { color: var(--accent-warm); }
+.abstract p {
+  margin: 0.65rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
 
 .sym-list { list-style: none; margin: 0; padding: 0; }
 .sym-list li {
