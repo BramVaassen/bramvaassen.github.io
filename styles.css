@@ -120,8 +120,8 @@ p { margin: 0 0 1.1rem; }
   margin-bottom: 0.5rem;
 }
 .intro img {
-  width: 168px;
-  height: 224px;
+  width: 220px;
+  height: 147px;
   object-fit: cover;
   border-radius: 3px;
   filter: grayscale(15%);
@@ -129,7 +129,7 @@ p { margin: 0 0 1.1rem; }
 }
 @media (max-width: 560px) {
   .intro { grid-template-columns: 1fr; gap: 1.75rem; }
-  .intro img { width: 152px; height: 203px; order: -1; }
+  .intro img { width: 100%; max-width: 320px; height: auto; aspect-ratio: 3 / 2; order: -1; }
 }
 
 /* Let the layout breathe on larger screens instead of staying phone-narrow */
@@ -141,7 +141,7 @@ p { margin: 0 0 1.1rem; }
   body { font-size: 1.08rem; }
   .wrap { padding: 5.5rem 3rem 8rem; }
   .intro { gap: 3.5rem; }
-  .intro img { width: 220px; height: 293px; }
+  .intro img { width: 300px; height: 200px; }
   header.site .mark { font-size: 1.3rem; }
   nav.site { font-size: 0.88rem; gap: 1.4rem; }
   h2 { margin: 3.5rem 0 1.25rem; }
@@ -149,7 +149,7 @@ p { margin: 0 0 1.1rem; }
 @media (min-width: 1280px) {
   :root { --measure: 58rem; }
   .wrap { padding: 7rem 3rem 10rem; }
-  .intro img { width: 248px; height: 331px; }
+  .intro img { width: 340px; height: 227px; }
 }
 
 .entry {
@@ -169,35 +169,6 @@ p { margin: 0 0 1.1rem; }
   color: var(--accent-warm);
   display: inline-block;
   min-width: 3ch;
-}
-.entry .synopsis {
-  font-size: 0.92rem;
-  font-style: italic;
-  color: var(--ink-muted);
-  margin: 0.35rem 0 0;
-}
-
-.abstract {
-  margin-top: 0.55rem;
-}
-.abstract summary {
-  cursor: pointer;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.74rem;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  list-style: none;
-}
-.abstract summary::-webkit-details-marker { display: none; }
-.abstract summary::before { content: "+ "; }
-.abstract[open] summary::before { content: "– "; }
-.abstract summary:hover { color: var(--accent-warm); }
-.abstract p {
-  margin: 0.65rem 0 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--ink);
 }
 
 .sym-list { list-style: none; margin: 0; padding: 0; }
