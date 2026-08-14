@@ -170,6 +170,50 @@ p { margin: 0 0 1.1rem; }
   display: inline-block;
   min-width: 3ch;
 }
+.entry .synopsis {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  opacity: 0.8;
+  margin: 0.4rem 0 0;
+  line-height: 1.5;
+}
+.entry .synopsis .tldr {
+  font-family: 'IBM Plex Mono', monospace;
+  font-style: normal;
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  opacity: 0.75;
+  margin-right: 0.5em;
+}
+
+.abstract {
+  margin-top: 0.5rem;
+}
+.abstract summary {
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  list-style: none;
+  opacity: 0.7;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+.abstract summary::-webkit-details-marker { display: none; }
+.abstract summary::before { content: "abstract ▸"; }
+.abstract[open] summary::before { content: "abstract ▾"; }
+.abstract summary:hover { opacity: 1; color: var(--accent); }
+.abstract p {
+  margin: 0.6rem 0 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--rule);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
 
 .sym-list { list-style: none; margin: 0; padding: 0; }
 .sym-list li {
